@@ -1,0 +1,17 @@
+name: financia-saas
+service:
+  name: financia
+  source:
+    github:
+      repository: Osvald2706/financia-saas
+      branch: master
+  build:
+    build_command: cd client && npm install && npm run build && cd ../server && npm install && npm run build
+  run:
+    command: cd server && npm start
+    ports:
+      - target: 3001
+        http: true
+    env:
+      - key: JWT_SECRET
+        value: financia-secret-koyeb-2026
