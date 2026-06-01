@@ -91,10 +91,12 @@ wss.on('close', () => clearInterval(interval));
 
 initializeDatabase();
 
-server.listen(config.port, () => {
-  console.log(`🏦 Financia Server running on port ${config.port}`);
-  console.log(`🔗 API: http://localhost:${config.port}/api`);
-  console.log(`🔌 WS: ws://localhost:${config.port}/ws`);
-});
+if (!process.env.NETLIFY) {
+  server.listen(config.port, () => {
+    console.log(`🏦 Financia Server running on port ${config.port}`);
+    console.log(`🔗 API: http://localhost:${config.port}/api`);
+    console.log(`🔌 WS: ws://localhost:${config.port}/ws`);
+  });
+}
 
 export { app, server };

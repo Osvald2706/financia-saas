@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install:all": "cd server && npm install && cd ../client && npm install",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
     "seed": "cd server && npm run seed",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
@@ -13,5 +13,13 @@
   },
   "devDependencies": {
     "concurrently": "^9.0.0"
+  },
+  "description": "Financia - Control Financiero Personal SAAS",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.10.0",
+    "serverless-http": "^4.0.0",
+    "uuid": "^14.0.0"
   }
 }
