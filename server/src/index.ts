@@ -91,7 +91,7 @@ wss.on('close', () => clearInterval(interval));
 
 initializeDatabase();
 
-if (!process.env.NETLIFY) {
+if (!process.env.NETLIFY && !process.env.VERCEL) {
   server.listen(config.port, () => {
     console.log(`🏦 Financia Server running on port ${config.port}`);
     console.log(`🔗 API: http://localhost:${config.port}/api`);
